@@ -2,7 +2,7 @@
   :name "janet-box2d"
   :description "Janet bindings to Box2c (ie box2d version 3)"
   :url ""
-  :author "")
+  :author "Alec Troemel <alectroemel@hotmail.com>")
 
 (rule "build/janetbox2d.so" ["CMakeLists.txt"]
       (do

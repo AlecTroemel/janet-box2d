@@ -19,10 +19,15 @@
 # IN THE SOFTWARE.
 
 cmake_minimum_required(VERSION 3.7)
-project(janetbox2d
-	VERSION 1.0
-	LANGUAGES C)
+project(janetbox2d)
 set(TARGET_NAME ${PROJECT_NAME})
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_FLAGS "${CMAKE_C_CFLAGS} -fPIC")
+
+# Set configurations
+# SET(CMAKE_C_FLAGS_RELWITHDEBINFO "-O2 -g")
+SET(CMAKE_C_FLAGS_RELEASE "-O2")
+SET(CMAKE_C_FLAGS_DEBUG  "-O0 -g")
 
 set(SOURCES
 main.c
@@ -35,7 +40,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/box2c/include/)
 # NOTE alpha box2d v3 currently has a cheeky name, as its being writen in C
 set(BOX2D_SAMPLES OFF)
 set(BOX2D_DOCS OFF)
-set(BOX2D_USER_CONSTANTS ON)
+set(BOX2D_USER_CONSTANTS OFF)
 add_subdirectory(box2c)
 
 # Build our library
