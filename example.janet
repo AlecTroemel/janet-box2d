@@ -4,9 +4,8 @@
 (init-window 800 600 "hello box2d")
 (set-target-fps 60)
 
-# FIXME need to dig into src is a little weird
+# 0. import the lib, optionally behind a prefix
 (import ./build/janet-box2d :as b2)
-# (import ./build/src/libjanetbox2d :as b2)
 
 # 1. first create the world.
 (def world (b2/create-world {:gravity [0 10]}))
