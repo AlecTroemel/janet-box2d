@@ -4,7 +4,7 @@
   :url ""
   :author "Alec Troemel <alectroemel@hotmail.com>")
 
-(rule "build/janetbox2d.so" ["CMakeLists.txt"]
+(rule "build/src/janetbox2d.so" ["CMakeLists.txt"]
       (do
 	(os/mkdir "build")
 	(os/cd "build")
@@ -13,4 +13,4 @@
 	  (zero?
 	    (os/execute ["make"] :p)))))
 
-(add-dep "build" "build/janetbox2d.so")
+(add-dep "build" "build/src/janetbox2d.so")

@@ -29,10 +29,6 @@ set(CMAKE_C_FLAGS "${CMAKE_C_CFLAGS} -fPIC")
 SET(CMAKE_C_FLAGS_RELEASE "-O2")
 SET(CMAKE_C_FLAGS_DEBUG  "-O0 -g")
 
-set(SOURCES
-main.c
-)
-
 # get the box2d headers
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/box2c/include/)
 
@@ -44,5 +40,4 @@ set(BOX2D_USER_CONSTANTS OFF)
 add_subdirectory(box2c)
 
 # Build our library
-add_library(${TARGET_NAME} MODULE ${SOURCES})
-target_link_libraries(${TARGET_NAME} box2d)
+add_subdirectory(src)
