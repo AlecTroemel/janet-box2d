@@ -4,13 +4,20 @@
   :url ""
   :author "Alec Troemel <alectroemel@hotmail.com>")
 
-(rule "build/src/janetbox2d.so" ["CMakeLists.txt"]
-      (do
-	(os/mkdir "build")
-	(os/cd "build")
-	(os/execute ["cmake" ".."] :p)
-	(assert
-	  (zero?
-	    (os/execute ["make"] :p)))))
+(defn get-files [extension path]
+  (->> (os/dir path)
+       (filter |(peg/match ~{:main (* (some (+ :w "_")) ,extension (! "make") (! "~"))} $))
+       (map |(string/format "%s%s" path $))))
 
-(add-dep "build" "build/src/janetbox2d.so")
+(def get-headers (partial get-files ".h"))
+(def get-source (partial get-files ".c"))
+
+(declare-native
+  :name "janet-box2d"
+  :cflags [;default-cflags "-std=c17" "-mavx" "-Ibox2c/include" "-Ibox2c/extern/simde"]
+  :lflags [;default-lflags "-lX11" ]
+  :headers [;(get-headers "src/")
+	    ;(get-headers "box2c/include/box2d/")
+	    ;(get-headers "box2c/src/")]
+  :source [;(get-source "src/")
+	   ;(get-source "box2c/src/")])

@@ -1,4 +1,4 @@
-#include <box2d/box2d.h>
+#include "box2d/box2d.h"
 
 static Janet janet_make_box(int32_t argc, Janet *argv) {
   janet_fixarity(argc, 2);
@@ -37,10 +37,8 @@ static Janet janet_create_polygon_shape(int32_t argc, Janet *argv) {
   return janet_wrap_nil();
 }
 
-
-
 static const JanetReg shapes_cfuns[] = {
   {"make-box", janet_make_box, NULL},
   {"create-polygon-shape", janet_create_polygon_shape, NULL},
-  {NULL, NULL}
+  {NULL, NULL, NULL}
 };

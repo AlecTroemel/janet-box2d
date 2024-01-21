@@ -1,4 +1,4 @@
-#include <box2d/box2d.h>
+#include "box2d/box2d.h"
 
 static Janet janet_create_world(int32_t argc, Janet *argv) {
   janet_arity(argc, 0, 1);
@@ -42,5 +42,5 @@ static const JanetReg world_cfuns[] = {
     "Create a physics world."
   },
   {"world-step", janet_world_step, NULL},
-  {NULL, NULL}
+  {NULL, NULL, NULL}
 };

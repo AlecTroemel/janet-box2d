@@ -7,7 +7,7 @@
 #include "shapes.h"
 
 JANET_MODULE_ENTRY(JanetTable *env) {
-  janet_cfuns(env, "janetbox2d", body_cfuns);
-  janet_cfuns(env, "janetbox2d", world_cfuns);
-  janet_cfuns(env, "janetbox2d", shapes_cfuns);
+  janet_cfuns(env, "janet-box2d", body_cfuns);
+  janet_cfuns(env, "janet-box2d", world_cfuns);
+  janet_cfuns(env, "janet-box2d", shapes_cfuns);
 }

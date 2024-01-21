@@ -1,4 +1,4 @@
-#include <box2d/box2d.h>
+#include "box2d/box2d.h"
 
 static Janet janet_create_body(int32_t argc, Janet *argv) {
   janet_arity(argc, 1, 2);
@@ -57,5 +57,5 @@ static Janet janet_body_apply_force_to_center(int32_t argc, Janet *argv) {
 static const JanetReg body_cfuns[] = {
   {"create-body", janet_create_body, NULL},
   {"body-apply-force-to-center", janet_body_apply_force_to_center, NULL},
-  {NULL, NULL}
+  {NULL, NULL, NULL}
 };

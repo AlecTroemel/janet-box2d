@@ -5,7 +5,8 @@
 (set-target-fps 60)
 
 # FIXME need to dig into src is a little weird
-(import ./build/src/libjanetbox2d :as b2)
+(import ./build/janet-box2d :as b2)
+# (import ./build/src/libjanetbox2d :as b2)
 
 # 1. first create the world.
 (def world (b2/create-world {:gravity [0 10]}))
@@ -16,10 +17,10 @@
 			   :position [100 100]
 			   :angle 0 }))
 
-# 3. create a shape
+# # 3. create a shape
 (def ground-box (b2/make-box 50 10))
 
-# 4. then add shape to body
+# # 4. then add shape to body
 (b2/create-polygon-shape body ground-box {:density 1 :friction 0.3})
 
 # 5. step the physics world
