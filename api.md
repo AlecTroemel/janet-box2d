@@ -1,8 +1,8 @@
 # World
-- [ ] B2_API b2WorldId b2CreateWorld( const b2WorldDef* def );
+- [x] B2_API b2WorldId b2CreateWorld( const b2WorldDef* def );
 - [ ] B2_API void b2DestroyWorld( b2WorldId worldId );
 - [ ] B2_API bool b2World_IsValid( b2WorldId id );
-- [ ] B2_API void b2World_Step( b2WorldId worldId, float timeStep, int subStepCount );
+- [x] B2_API void b2World_Step( b2WorldId worldId, float timeStep, int subStepCount );
 - [ ] B2_API void b2World_Draw( b2WorldId worldId, b2DebugDraw* draw );
 - [ ] B2_API b2BodyEvents b2World_GetBodyEvents( b2WorldId worldId );
 - [ ] B2_API b2SensorEvents b2World_GetSensorEvents( b2WorldId worldId );
@@ -44,7 +44,7 @@
 - [ ] B2_API void b2World_RebuildStaticTree( b2WorldId worldId );
 
 # Body
-- [ ] B2_API b2BodyId b2CreateBody( b2WorldId worldId, const b2BodyDef* def );
+- [x] B2_API b2BodyId b2CreateBody( b2WorldId worldId, const b2BodyDef* def );
 - [ ] B2_API void b2DestroyBody( b2BodyId bodyId );
 - [ ] B2_API bool b2Body_IsValid( b2BodyId id );
 - [ ] B2_API b2BodyType b2Body_GetType( b2BodyId bodyId );
@@ -63,12 +63,12 @@
 - [ ] B2_API float b2Body_GetAngularVelocity( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetLinearVelocity( b2BodyId bodyId, b2Vec2 linearVelocity );
 - [ ] B2_API void b2Body_SetAngularVelocity( b2BodyId bodyId, float angularVelocity );
-- [ ] B2_API void b2Body_ApplyForce( b2BodyId bodyId, b2Vec2 force, b2Vec2 point, bool wake );
-- [ ] B2_API void b2Body_ApplyForceToCenter( b2BodyId bodyId, b2Vec2 force, bool wake );
-- [ ] B2_API void b2Body_ApplyTorque( b2BodyId bodyId, float torque, bool wake );
-- [ ] B2_API void b2Body_ApplyLinearImpulse( b2BodyId bodyId, b2Vec2 impulse, b2Vec2 point, bool wake );
-- [ ] B2_API void b2Body_ApplyLinearImpulseToCenter( b2BodyId bodyId, b2Vec2 impulse, bool wake );
-- [ ] B2_API void b2Body_ApplyAngularImpulse( b2BodyId bodyId, float impulse, bool wake );
+- [x] B2_API void b2Body_ApplyForce( b2BodyId bodyId, b2Vec2 force, b2Vec2 point, bool wake );
+- [x] B2_API void b2Body_ApplyForceToCenter( b2BodyId bodyId, b2Vec2 force, bool wake );
+- [x] B2_API void b2Body_ApplyTorque( b2BodyId bodyId, float torque, bool wake );
+- [x] B2_API void b2Body_ApplyLinearImpulse( b2BodyId bodyId, b2Vec2 impulse, b2Vec2 point, bool wake );
+- [x] B2_API void b2Body_ApplyLinearImpulseToCenter( b2BodyId bodyId, b2Vec2 impulse, bool wake );
+- [x] B2_API void b2Body_ApplyAngularImpulse( b2BodyId bodyId, float impulse, bool wake );
 - [ ] B2_API float b2Body_GetMass( b2BodyId bodyId );
 - [ ] B2_API float b2Body_GetRotationalInertia( b2BodyId bodyId );
 - [ ] B2_API b2Vec2 b2Body_GetLocalCenterOfMass( b2BodyId bodyId );
@@ -83,7 +83,7 @@
 - [ ] B2_API void b2Body_SetGravityScale( b2BodyId bodyId, float gravityScale );
 - [ ] B2_API float b2Body_GetGravityScale( b2BodyId bodyId );
 - [ ] B2_API bool b2Body_IsAwake( b2BodyId bodyId );
-- [ ] B2_API void b2Body_SetAwake( b2BodyId bodyId, bool awake );
+- [x] B2_API void b2Body_SetAwake( b2BodyId bodyId, bool awake );
 - [ ] B2_API void b2Body_EnableSleep( b2BodyId bodyId, bool enableSleep );
 - [ ] B2_API bool b2Body_IsSleepEnabled( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetSleepThreshold( b2BodyId bodyId, float sleepThreshold );
@@ -107,10 +107,10 @@
 
 
 # Shape
-- [ ] B2_API b2ShapeId b2CreateCircleShape( b2BodyId bodyId, const b2ShapeDef* def, const b2Circle* circle );
+- [x] B2_API b2ShapeId b2CreateCircleShape( b2BodyId bodyId, const b2ShapeDef* def, const b2Circle* circle );
 - [ ] B2_API b2ShapeId b2CreateSegmentShape( b2BodyId bodyId, const b2ShapeDef* def, const b2Segment* segment );
 - [ ] B2_API b2ShapeId b2CreateCapsuleShape( b2BodyId bodyId, const b2ShapeDef* def, const b2Capsule* capsule );
-- [ ] B2_API b2ShapeId b2CreatePolygonShape( b2BodyId bodyId, const b2ShapeDef* def, const b2Polygon* polygon );
+- [x] B2_API b2ShapeId b2CreatePolygonShape( b2BodyId bodyId, const b2ShapeDef* def, const b2Polygon* polygon );
 - [ ] B2_API void b2DestroyShape( b2ShapeId shapeId, bool updateBodyMass );
 - [ ] B2_API bool b2Shape_IsValid( b2ShapeId id );
 - [ ] B2_API b2ShapeType b2Shape_GetType( b2ShapeId shapeId );
@@ -180,7 +180,7 @@
 - [ ] B2_API float b2Joint_GetConstraintTorque( b2JointId jointId );
 
 ## Distance Joint
-- [ ] B2_API b2JointId b2CreateDistanceJoint( b2WorldId worldId, const b2DistanceJointDef* def );
+- [x] B2_API b2JointId b2CreateDistanceJoint( b2WorldId worldId, const b2DistanceJointDef* def );
 - [ ] B2_API void b2DistanceJoint_SetLength( b2JointId jointId, float length );
 - [ ] B2_API float b2DistanceJoint_GetLength( b2JointId jointId );
 - [ ] B2_API void b2DistanceJoint_EnableSpring( b2JointId jointId, bool enableSpring );
@@ -217,7 +217,7 @@
 - [ ] B2_API float b2MotorJoint_GetCorrectionFactor( b2JointId jointId );
 
 ## Mouse Joint
-- [ ] B2_API b2JointId b2CreateMouseJoint( b2WorldId worldId, const b2MouseJointDef* def );
+- [x] B2_API b2JointId b2CreateMouseJoint( b2WorldId worldId, const b2MouseJointDef* def );
 - [ ] B2_API void b2MouseJoint_SetTarget( b2JointId jointId, b2Vec2 target );
 - [ ] B2_API b2Vec2 b2MouseJoint_GetTarget( b2JointId jointId );
 - [ ] B2_API void b2MouseJoint_SetSpringHertz( b2JointId jointId, float hertz );
