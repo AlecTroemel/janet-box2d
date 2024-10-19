@@ -37,7 +37,7 @@
 - [ ] B2_API void b2World_EnableWarmStarting( b2WorldId worldId, bool flag );
 - [ ] B2_API bool b2World_IsWarmStartingEnabled( b2WorldId worldId );
 - [ ] B2_API b2Profile b2World_GetProfile( b2WorldId worldId );
-- [ ] B2_API b2Counters b2World_GetCounters( b2WorldId worldId );
+- [x] B2_API b2Counters b2World_GetCounters( b2WorldId worldId );
 - [ ] B2_API void b2World_SetUserData( b2WorldId worldId, void* userData );
 - [ ] B2_API void* b2World_GetUserData( b2WorldId worldId );
 - [ ] B2_API void b2World_DumpMemoryStats( b2WorldId worldId );
@@ -45,23 +45,23 @@
 
 # Body
 - [x] B2_API b2BodyId b2CreateBody( b2WorldId worldId, const b2BodyDef* def );
-- [ ] B2_API void b2DestroyBody( b2BodyId bodyId );
+- [x] B2_API void b2DestroyBody( b2BodyId bodyId );
 - [ ] B2_API bool b2Body_IsValid( b2BodyId id );
 - [ ] B2_API b2BodyType b2Body_GetType( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetType( b2BodyId bodyId, b2BodyType type );
 - [ ] B2_API void b2Body_SetUserData( b2BodyId bodyId, void* userData );
 - [ ] B2_API void* b2Body_GetUserData( b2BodyId bodyId );
-- [ ] B2_API b2Vec2 b2Body_GetPosition( b2BodyId bodyId );
+- [x] B2_API b2Vec2 b2Body_GetPosition( b2BodyId bodyId );
 - [ ] B2_API b2Rot b2Body_GetRotation( b2BodyId bodyId );
 - [ ] B2_API b2Transform b2Body_GetTransform( b2BodyId bodyId );
-- [ ] B2_API void b2Body_SetTransform( b2BodyId bodyId, b2Vec2 position, b2Rot rotation );
+- [/] B2_API void b2Body_SetTransform( b2BodyId bodyId, b2Vec2 position, b2Rot rotation );
 - [ ] B2_API b2Vec2 b2Body_GetLocalPoint( b2BodyId bodyId, b2Vec2 worldPoint );
 - [ ] B2_API b2Vec2 b2Body_GetWorldPoint( b2BodyId bodyId, b2Vec2 localPoint );
 - [ ] B2_API b2Vec2 b2Body_GetLocalVector( b2BodyId bodyId, b2Vec2 worldVector );
 - [ ] B2_API b2Vec2 b2Body_GetWorldVector( b2BodyId bodyId, b2Vec2 localVector );
-- [ ] B2_API b2Vec2 b2Body_GetLinearVelocity( b2BodyId bodyId );
+- [x] B2_API b2Vec2 b2Body_GetLinearVelocity( b2BodyId bodyId );
 - [ ] B2_API float b2Body_GetAngularVelocity( b2BodyId bodyId );
-- [ ] B2_API void b2Body_SetLinearVelocity( b2BodyId bodyId, b2Vec2 linearVelocity );
+- [x] B2_API void b2Body_SetLinearVelocity( b2BodyId bodyId, b2Vec2 linearVelocity );
 - [ ] B2_API void b2Body_SetAngularVelocity( b2BodyId bodyId, float angularVelocity );
 - [x] B2_API void b2Body_ApplyForce( b2BodyId bodyId, b2Vec2 force, b2Vec2 point, bool wake );
 - [x] B2_API void b2Body_ApplyForceToCenter( b2BodyId bodyId, b2Vec2 force, bool wake );
@@ -82,7 +82,7 @@
 - [ ] B2_API float b2Body_GetAngularDamping( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetGravityScale( b2BodyId bodyId, float gravityScale );
 - [ ] B2_API float b2Body_GetGravityScale( b2BodyId bodyId );
-- [ ] B2_API bool b2Body_IsAwake( b2BodyId bodyId );
+- [x] B2_API bool b2Body_IsAwake( b2BodyId bodyId );
 - [x] B2_API void b2Body_SetAwake( b2BodyId bodyId, bool awake );
 - [ ] B2_API void b2Body_EnableSleep( b2BodyId bodyId, bool enableSleep );
 - [ ] B2_API bool b2Body_IsSleepEnabled( b2BodyId bodyId );
@@ -125,7 +125,7 @@
 - [ ] B2_API float b2Shape_GetFriction( b2ShapeId shapeId );
 - [ ] B2_API void b2Shape_SetRestitution( b2ShapeId shapeId, float restitution );
 - [ ] B2_API float b2Shape_GetRestitution( b2ShapeId shapeId );
-- [ ] B2_API b2Filter b2Shape_GetFilter( b2ShapeId shapeId );
+- [/] B2_API b2Filter b2Shape_GetFilter( b2ShapeId shapeId );
 - [ ] B2_API void b2Shape_SetFilter( b2ShapeId shapeId, b2Filter filter );
 - [ ] B2_API void b2Shape_EnableSensorEvents( b2ShapeId shapeId, bool flag );
 - [ ] B2_API bool b2Shape_AreSensorEventsEnabled( b2ShapeId shapeId );
