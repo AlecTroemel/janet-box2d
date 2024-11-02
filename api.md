@@ -88,9 +88,9 @@
 - [ ] B2_API bool b2Body_IsSleepEnabled( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetSleepThreshold( b2BodyId bodyId, float sleepThreshold );
 - [ ] B2_API float b2Body_GetSleepThreshold( b2BodyId bodyId );
-- [ ] B2_API bool b2Body_IsEnabled( b2BodyId bodyId );
-- [ ] B2_API void b2Body_Disable( b2BodyId bodyId );
-- [ ] B2_API void b2Body_Enable( b2BodyId bodyId );
+- [x] B2_API bool b2Body_IsEnabled( b2BodyId bodyId );
+- [x] B2_API void b2Body_Disable( b2BodyId bodyId );
+- [x] B2_API void b2Body_Enable( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetFixedRotation( b2BodyId bodyId, bool flag );
 - [ ] B2_API bool b2Body_IsFixedRotation( b2BodyId bodyId );
 - [ ] B2_API void b2Body_SetBullet( b2BodyId bodyId, bool flag );

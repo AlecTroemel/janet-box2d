@@ -139,6 +139,11 @@ int at_body_get(void *p, Janet key, Janet *out) {
     return 1;
   }
 
+  if (!janet_cstrcmp(kw, "enabled?")) {
+    *out = janet_wrap_boolean(b2Body_IsEnabled(*bodyId));
+    return 1;
+  }
+
   return 0;
 }
 
@@ -163,6 +168,14 @@ void at_body_put(void *p, Janet key, Janet value) {
       janet_getnumber(idx, 1)
     };
     b2Body_SetTransform(*bodyId, position, oldRotation);
+  }
+
+  if (!janet_cstrcmp(kw, "enabled?")) {
+    if (janet_unwrap_boolean(value)) {
+      b2Body_Enable(*bodyId);
+    } else {
+      b2Body_Disable(*bodyId);
+    }
   }
 }
 
