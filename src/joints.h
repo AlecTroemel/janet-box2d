@@ -15,30 +15,25 @@ static Janet janet_create_distance_joint(int32_t argc, Janet *argv) {
     Janet maybe_anchor_a = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("anchor-a"));
     Janet maybe_anchor_b = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("anchor-b"));
     Janet maybe_length = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("length"));
-    Janet maybe_min_length = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("min-length"));
-    Janet maybe_max_length = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("max-length"));
     Janet maybe_hertz = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("hertz"));
     Janet maybe_damping_ratio = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("damping-ration"));
     Janet maybe_collide_connected = janet_dictionary_get(tab.kvs, tab.cap, janet_ckeywordv("collide-connected?"));
 
     if (!janet_checktype(maybe_anchor_a, JANET_NIL)) {
-      jointDef.localAnchorA = b2Body_GetLocalPoint(jointDef.bodyIdA, box2d_getvec2(&maybe_anchor_a, 0));
+      jointDef.localAnchorA = box2d_getvec2(&maybe_anchor_a, 0);
     }
 
     if (!janet_checktype(maybe_anchor_b, JANET_NIL)) {
-      jointDef.localAnchorB = b2Body_GetLocalPoint(jointDef.bodyIdB, box2d_getvec2(&maybe_anchor_b, 0));
+      jointDef.localAnchorB = box2d_getvec2(&maybe_anchor_b, 0);
     }
 
     if (!janet_checktype(maybe_length, JANET_NIL)) {
       jointDef.length = janet_getnumber(&maybe_length, 0);
-    }
-
-    if (!janet_checktype(maybe_min_length, JANET_NIL)) {
-      jointDef.minLength = janet_getnumber(&maybe_min_length, 0);
-    }
-
-    if (!janet_checktype(maybe_max_length, JANET_NIL)) {
-      jointDef.maxLength = janet_getnumber(&maybe_max_length, 0);
+    } else if (!janet_checktype(maybe_anchor_a, JANET_NIL) &&
+	       !janet_checktype(maybe_anchor_b, JANET_NIL)) {
+      b2Vec2 anchorA = b2Body_GetWorldPoint(jointDef.bodyIdA, jointDef.localAnchorA);
+      b2Vec2 anchorB = b2Body_GetWorldPoint(jointDef.bodyIdB, jointDef.localAnchorB);
+      jointDef.length = b2Distance(anchorA, anchorB);
     }
 
     if (!janet_checktype(maybe_hertz, JANET_NIL)) {
@@ -103,7 +98,7 @@ static Janet janet_create_mouse_joint(int32_t argc, Janet *argv) {
 static const JanetReg joint_cfuns[] = {
   {"create-distance-joint", janet_create_distance_joint, NULL},
   /* {"create-motor-joint", janet_create_distance_joint, NULL}, */
-  {"create-mouse-joint", janet_create_distance_joint, NULL},
+  {"create-mouse-joint", janet_create_mouse_joint, NULL},
   /* {"create-prismatic-joint", janet_create_distance_joint, NULL}, */
   /* {"create-revolute-joint", janet_create_distance_joint, NULL}, */
   /* {"create-weld-joint", janet_create_distance_joint, NULL}, */

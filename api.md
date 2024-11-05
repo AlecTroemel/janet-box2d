@@ -153,14 +153,14 @@
 - [ ] B2_API b2Vec2 b2Shape_GetClosestPoint( b2ShapeId shapeId, b2Vec2 target );
 
 # Chain
-- [ ] B2_API b2ChainId b2CreateChain( b2BodyId bodyId, const b2ChainDef* def );
-- [ ] B2_API void b2DestroyChain( b2ChainId chainId );
-- [ ] B2_API b2WorldId b2Chain_GetWorld( b2ChainId chainId );
-- [ ] B2_API int b2Chain_GetSegmentCount( b2ChainId chainId );
+- [x] B2_API b2ChainId b2CreateChain( b2BodyId bodyId, const b2ChainDef* def );
+- [x] B2_API void b2DestroyChain( b2ChainId chainId );
+- [x] B2_API b2WorldId b2Chain_GetWorld( b2ChainId chainId );
+- [x] B2_API int b2Chain_GetSegmentCount( b2ChainId chainId );
 - [ ] B2_API int b2Chain_GetSegments( b2ChainId chainId, b2ShapeId* segmentArray, int capacity );
-- [ ] B2_API void b2Chain_SetFriction( b2ChainId chainId, float friction );
-- [ ] B2_API void b2Chain_SetRestitution( b2ChainId chainId, float restitution );
-- [ ] B2_API bool b2Chain_IsValid( b2ChainId id );
+- [x] B2_API void b2Chain_SetFriction( b2ChainId chainId, float friction );
+- [x] B2_API void b2Chain_SetRestitution( b2ChainId chainId, float restitution );
+- [x] B2_API bool b2Chain_IsValid( b2ChainId id );
 
 # Joint
 - [ ] B2_API void b2DestroyJoint( b2JointId jointId );

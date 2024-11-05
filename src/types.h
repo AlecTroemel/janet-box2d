@@ -21,6 +21,20 @@ static Janet box2d_wrap_vec2(b2Vec2 x) {
     return janet_wrap_tuple(janet_tuple_end(tup));
 }
 
+static Janet box2d_wrap_vec2s(b2Vec2* vecs, int count) {
+  Janet *outer = janet_tuple_begin(count);
+
+  for (int32_t i = 0; i < count; i++) {
+    Janet *inner = janet_tuple_begin(2);
+    inner[0] = janet_wrap_number(vecs[i].x);
+    inner[1] = janet_wrap_number(vecs[i].y);
+    outer[i] = janet_wrap_tuple(janet_tuple_end(inner));
+  }
+
+  return janet_wrap_tuple(janet_tuple_end(outer));
+}
+
+
 static b2Vec2 box2d_getvec2(const Janet *argv, int32_t n) {
   JanetView idx = janet_getindexed(argv, n);
 
@@ -29,7 +43,6 @@ static b2Vec2 box2d_getvec2(const Janet *argv, int32_t n) {
     idx_getfloat(idx, 1)
   };
 }
-
 
 static b2Vec2 box2d_unwrap_vec2(const Janet val) {
   JanetView view;
@@ -429,3 +442,5 @@ static const JanetAbstractType AT_Joint = {
 static b2JointId *box2d_getjoint(const Janet *argv, int32_t n) {
   return ((b2JointId *)janet_getabstract(argv, n, &AT_Joint));
 };
+
+
